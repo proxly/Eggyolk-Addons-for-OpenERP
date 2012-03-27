@@ -1,3 +1,14 @@
+#This Module is configured for 
+#use in the Philippines.
+#If you plan to use this module for
+#your company outside the Philippines,
+#many changes must be done.
+#Author: Roxly Rivero
+#Company: Eggyolk Solutions Inc.
+#
+#
+####################################
+
 from osv import fields, osv
 import time
 from tools.translate import _
