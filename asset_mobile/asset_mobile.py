@@ -2,9 +2,6 @@ from osv import fields, osv
 import time
 from tools.translate import _
 
-
-
-
 class asset_mobile(osv.osv):
         _name = "asset.mobile"
         _description = "Mobile Phones"
