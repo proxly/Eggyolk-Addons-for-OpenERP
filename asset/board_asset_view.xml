@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <menuitem id="base.dashboard" name="Dashboard" sequence="2" parent="base.reporting_menu"/>
+
+    <!-- This board view will be complete by other mgmtsystem_* modules-->
+        <record id="board_asset_form" model="ir.ui.view">
+            <field name="name">board.asset.form</field>
+            <field name="model">board.board</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="My Board">
+                    <hpaned>
+                        <child1>
+                        </child1>
+                        <child2>
+                        </child2>
+                    </hpaned>
+                </form>
+            </field>
+        </record>
+
+       <record id="open_board_asset" model="ir.actions.act_window">
+            <field name="name">Asset Management Dashboard</field>
+            <field name="res_model">board.board</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="usage">menu</field>
+            <field name="view_id" ref="board_asset_form"/>
+        </record>
+        <menuitem
+            id="menu_asset_dashboard"
+            name="Asset Management"
+            parent="base.dashboard"
+            action="open_board_asset"/>
+
+        <menuitem id="menu_asset_root" icon="terp-hr" name="Asset Management" sequence="50" action="open_board_asset"/>
+
+    </data>
+</openerp>

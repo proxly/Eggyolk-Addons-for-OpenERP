@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_asset_nonconformity,asset.nonconformity,model_asset_nonconformity,base.group_user,1,1,1,0
+access_asset_nonconformity_origin,asset.nonconformity.origin,model_asset_nonconformity_origin,base.group_asset_manager,1,1,1,1
+access_asset_nonconformity_process,asset.nonconformity.process,model_asset_nonconformity_process,base.group_asset_manager,1,1,1,1
+access_asset_nonconformity_cause,asset.nonconformity.cause,model_asset_nonconformity_cause,base.group_asset_manager,1,1,1,1

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data noupdate="1">
+
+    <record id="base.group_asset_manager" model="res.groups">
+        <field name="name">Asset Management System / Manager</field>
+    </record>
+
+    <record id="base.group_asset_user" model="res.groups">
+        <field name="name">Asset Management System / User</field>
+    </record>
+
+</data>
+</openerp>

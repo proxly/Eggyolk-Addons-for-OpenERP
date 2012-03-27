@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <menuitem id="menu_asset_root" 
+            name="Asset Management" 
+            sequence="15" 
+            groups="base.group_asset_manager,base.group_user"
+            web_icon="images/gqwest.png"
+            web_icon_hover="images/gqwest-hover.png"/>
+
+        <menuitem id="menu_asset_main" 
+            name="Assets" 
+            parent="menu_asset_root" 
+            sequence="0" 
+            groups="base.group_user"/>
+
+        <menuitem id="menu_asset_configuration" 
+            name="Configuration" 
+            parent="asset.menu_asset_root" 
+            groups="base.group_asset_manager" 
+            sequence="50"/>
+
+    </data>
+</openerp>
