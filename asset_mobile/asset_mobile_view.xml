@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+		<!--Issue Tracker-->
+		
+		<record id="view_asset_mobile_issuetracker_tree" model="ir.ui.view">
+            <field name="name">asset.mobile.issuetracker.tree</field>
+            <field name="model">asset.mobile.issuetracker</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Mobile Phone Issues">
+                    <field name="date"/>
+                    <field name="category"/>
+                    <field name="status"/>
+                </tree>
+            </field>
+        </record>
+		
+		<record id="view_asset_mobile_issuetracker_filter" model="ir.ui.view">
+            <field name="name">asset.mobile.issuetracker.filter</field>
+            <field name="model">asset.mobile.issuetracker</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search string="Mobile Phone Issues">
+                    <group>
+                        <field name="category"/>
+						<field name="status"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+		
+		<record id="view_asset_mobile_issuetracker_form" model="ir.ui.view">
+            <field name="name">asset.mobile.issuetracker.form</field>
+            <field name="type">form</field>
+            <field name="model">asset.mobile.issuetracker</field>
+            <field name="arch" type="xml">
+                <form string="Issue Tracker">
+                    <group colspan="6" col="6">
+						<separator string="Issue Details"/>
+                        <field name="date"/>
+                        <field name="category"/>
+                        <field name="status"/>
+                    </group>
+					<newline/>
+					<field name ="issue_details"/>
+					<newline/>
+                </form>
+            </field>
+        </record>
+		
+		    <record id="open_asset_mobile_issuetracker_list" model="ir.actions.act_window">
+            <field name="name">Issue Tracker</field>
+            <field name="res_model">asset.mobile.issuetracker</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+				
+	
+		<!--Mobile Phone Movement-->
+		
+		<record id="view_asset_mobile_movement_tree" model="ir.ui.view">
+            <field name="name">asset.mobile.movement.tree</field>
+            <field name="model">asset.mobile.movement</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Phone Movement">
+                    <field name="date"/>
+                    <field name="condition"/>
+                    <field name="assigned_to"/>
+                </tree>
+            </field>
+        </record>
+		
+		<record id="view_asset_mobile_movement_filter" model="ir.ui.view">
+            <field name="name">asset.mobile.movement.filter</field>
+            <field name="model">asset.mobile.movement</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search string="Phone Movement">
+                    <group>
+                        <field name="condition"/>
+						<field name="assigned_to"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+		
+		<record id="view_asset_mobile_movement_form" model="ir.ui.view">
+            <field name="name">asset.mobile.movement.form</field>
+            <field name="type">form</field>
+            <field name="model">asset.mobile.movement</field>
+            <field name="arch" type="xml">
+                <form string="Phone Movement">
+                    <separator string="Phone Movement"/>
+					<group colspan="6" col="6">
+						<field name="date"/>
+                        <field name="condition"/>
+                        <field name="assigned_to"/>
+                    </group>
+					<newline/>
+					<field name ="remarks"/>
+					<newline/>
+                </form>
+            </field>
+        </record>
+		
+		    <record id="open_asset_mobile_movement_list" model="ir.actions.act_window">
+            <field name="name">Phone Movement</field>
+            <field name="res_model">asset.mobile.movement</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+		
+		<!--Mobile Phones Form-->
+        <record model="ir.ui.view" id="view_asset_mobile_tree">
+            <field name="name">asset.mobile.tree</field>
+            <field name="model">asset.mobile</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Mobile Phones">
+					<field name="mobile_no"/>
+                    <field name="brand"/>
+					<field name="model"/>
+                </tree>
+            </field>
+        </record>
+		
+		<record id="view_asset_mobile_filter" model="ir.ui.view">
+            <field name="name">asset.mobile.filter</field>
+            <field name="model">asset.mobile</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search string="Mobile Phones Lists">
+                    <group>
+                        <field name="mobile_no"/>
+						<field name="brand"/>
+						<field name="model"/>
+                    </group>
+                </search>
+            </field>
+        </record>      
+		
+		<record model="ir.ui.view" id="view_asset_mobile_form">
+            <field name="name">asset.mobile.form</field>
+            <field name="model">asset.mobile</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Mobile Phones">
+					<separator string="Mobile Phone Details"/>
+					<group colspan="4" col="4">
+						<field name="mobile_no"/>					
+						<field name="serial_no_phone"/>
+						<field name="brand"/>
+						<field name="model"/>
+					</group>
+					<group colspan="4" col="4">
+						<group colspan="2" col="2">
+							<separator string="Management Details"/>
+								<field name="serial_no_battery"/>
+							<separator string="Accesories"/>
+							<group colspan="8" col="8">
+								<group>
+									<field name="acc_charger"/>
+									<field name="acc_usb"/>
+									<field name="acc_memory_drive"/>
+									<field name="acc_memory_size"/>
+								</group>
+							</group>
+						</group>
+						<group colspan="2" col="2">
+							<separator string="Purchasing Details"/>
+							<field name="date_of_purchase"/>
+							<field name="invoice_no"/>
+						</group>
+					</group>
+					<separator/>
+					<group colspan="4" col="4">
+					<field name="mobile_issue_id" nolabel="1"/>
+					<field name="mobile_movement_id" nolabel="1"/>
+					</group>
+				</form>
+            </field>
+        </record>      
+		
+		<record model="ir.actions.act_window" id="action_asset_mobile_form">
+            <field name="name">Mobile Phones</field>
+            <field name="res_model">asset.mobile</field>
+			<field name="view_type">form</field>
+        </record>	
+
+<record model="ir.ui.view" id="view_asset_mobile_soa_tree">
+            <field name="name">asset.mobile.soa.tree</field>
+            <field name="model">asset.mobile.soa</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Statement of Account">
+                    <field name="soa_number"/>
+					<field name="statement_date"/>
+					<field name="start_billing"/>
+					<field name="end_billing"/>
+					<field name="total"/>
+				</tree>
+            </field>
+        </record>
+		
+		<record id="view_asset_mobile_soa_filter" model="ir.ui.view">
+            <field name="name">asset.mobile.soa.filter</field>
+            <field name="model">asset.mobile.soa</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search string="Statement of Account">
+                    <group>
+						<field name="soa_number"/>
+					</group>
+                </search>
+            </field>
+        </record>      
+		
+		<record model="ir.ui.view" id="view_asset_mobile_soa_form">
+            <field name="name">asset.mobile.soa.form</field>
+            <field name="model">asset.mobile.soa</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Statement of Account">
+					<separator string="Plan Details"/>
+					<group colspan="4" col="4">
+					<field name="soa_number"/>
+					<field name="statement_date"/>
+					<field name="start_billing"/>
+					<field name="end_billing"/>
+					<field name="total"/>
+					</group>
+					<separator/>
+				</form>
+            </field>
+        </record>      
+		
+		<record model="ir.actions.act_window" id="action_asset_mobile_soa_form">
+            <field name="name">Statement of Account</field>
+            <field name="res_model">asset.mobile.soa</field>
+			<field name="view_type">form</field>
+        </record>
+		
+		<!--Mobile Phone Plans-->
+		
+		<record model="ir.ui.view" id="view_asset_mobile_plans_tree">
+            <field name="name">asset.mobile.plans.tree</field>
+            <field name="model">asset.mobile.plans</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Mobile Phone Plans">
+					<field name="mobile_number"/>
+                    <field name="account_number"/>
+					<field name="assigned_to"/>
+					<field name="credit_limit"/>
+					<field name="telco"/>
+                </tree>
+            </field>
+        </record>
+		
+		<record id="view_asset_mobile_plans_filter" model="ir.ui.view">
+            <field name="name">asset.mobile.plans.filter</field>
+            <field name="model">asset.mobile.plans</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search string="Mobile Phone Plans">
+                    <group>
+                        <field name="mobile_number"/>
+						<field name="account_number"/>
+						<field name="assigned_to"/>
+						<field name="credit_limit"/>
+						<field name="telco"/>
+                    </group>
+                </search>
+            </field>
+        </record>      
+		
+		<record model="ir.ui.view" id="view_asset_mobile_plans_form">
+            <field name="name">asset.mobile.plans.form</field>
+            <field name="model">asset.mobile.plans</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Mobile Phone Plan">
+					<separator string="Plan Details"/>
+					<group colspan="4" col="4">
+						<field name="mobile_number"/>
+						<field name="account_number"/>
+						<field name="assigned_to"/>
+						<field name="credit_limit"/>
+						<field name="telco"/>
+					</group>
+					<separator string="Statement of Accounts"/>
+					<group colspan="4" col="2">
+					<field name="soa_ids" nolabel="1" colspan="4"/>
+					</group>
+				</form>
+            </field>
+        </record>      
+		
+		<record model="ir.actions.act_window" id="action_asset_mobile_plans_form">
+            <field name="name">Mobile Phone Plans</field>
+            <field name="res_model">asset.mobile.plans</field>
+			<field name="view_type">form</field>
+        </record>		
+		
+		<menuitem name="Mobile Phones" parent="asset.menu_asset_root" id="asset_mobile" action="action_asset_mobile_form"/>
+		<menuitem name="Mobile Phone Plans" parent="asset_mobile" id="asset_mobile_plans" action="action_asset_mobile_plans_form"/>
+		
+    </data>
+</openerp>
